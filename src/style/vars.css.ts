@@ -37,9 +37,4 @@ export const themeClass = style({
   },
 });
 
-globalStyle("html", {
-  background: variables.background.color,
-  color: variables.text.color,
-});
-
 export { variables };
