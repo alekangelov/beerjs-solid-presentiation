@@ -1,4 +1,4 @@
-import { createSignal, onCleanup, onMount } from "solid-js";
+import { createMemo, createSignal, onCleanup, onMount } from "solid-js";
 import Slide from "~/components/Slide";
 import SLIDES from "~/components/Slides";
 
@@ -26,12 +26,11 @@ export default function Home() {
       controller.abort();
     });
   });
-  const CurrentSlide = SLIDES[currentSlideIdx()];
+
+  const CurrentSlide = createMemo(() => SLIDES[currentSlideIdx()]());
   return (
     <main>
-      <Slide>
-        <CurrentSlide />
-      </Slide>
+      <Slide>{CurrentSlide()}</Slide>
     </main>
   );
 }
