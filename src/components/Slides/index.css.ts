@@ -2,7 +2,7 @@ import { style } from "@vanilla-extract/css";
 import { variables } from "../../style/vars.css";
 
 export const h1 = style({
-  fontSize: "3rem",
+  fontSize: "4rem",
   fontWeight: "900",
   textTransform: "uppercase",
   color: variables.text.color,
@@ -37,13 +37,13 @@ export const ul = style({
 export const li = style({
   fontSize: "3rem",
   color: variables.text.color,
-  // get selectors() {
-  //   return {
-  //     [`& + ${li}`]: {
-  //       marginTop: "1rem",
-  //     },
-  //   };
-  // },
+  get selectors() {
+    return {
+      [`& + ${li}`]: {
+        marginTop: "1rem",
+      },
+    };
+  },
 });
 
 export const monaco = style({
@@ -61,4 +61,5 @@ export const iframe = style({
   width: "100%",
   height: "100%",
   border: "none",
+  objectFit: "contain",
 });

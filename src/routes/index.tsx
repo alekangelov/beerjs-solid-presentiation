@@ -1,4 +1,6 @@
 import { createMemo, createSignal, onCleanup, onMount } from "solid-js";
+import { Dynamic } from "solid-js/web";
+import Arrows from "~/components/Arrows";
 import Slide from "~/components/Slide";
 import SLIDES from "~/components/Slides";
 
@@ -27,10 +29,12 @@ export default function Home() {
     });
   });
 
-  const CurrentSlide = createMemo(() => SLIDES[currentSlideIdx()]());
   return (
     <main>
-      <Slide>{CurrentSlide()}</Slide>
+      <Arrows onLeft={ACTIONS.ArrowLeft} onRight={ACTIONS.ArrowRight} />
+      <Slide>
+        <Dynamic component={SLIDES[currentSlideIdx()]} />
+      </Slide>
     </main>
   );
 }

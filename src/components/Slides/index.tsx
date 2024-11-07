@@ -69,7 +69,7 @@ const SLIDES = [
           <li class={s.li}>Не се променливи, функции се (гетер, сетер)</li>
           <li class={s.li}>createSignal, а не useSignal</li>
           <li class={s.li}>Можат да бидат локални, глобални и се во средина</li>
-          <li class={s.li}>Не постои мемоизација, ниту низа на зависност</li>
+          <li class={s.li}>Не постои мемоизација, ниту низи од зависност</li>
         </ul>
       </div>
     );
@@ -80,6 +80,100 @@ const SLIDES = [
         class={s.iframe}
         src="https://codesandbox.io/p/devbox/spring-water-d2kl21"
       />
+    );
+  },
+  () => {
+    return (
+      <div class={s.fs}>
+        <h1 class={s.h1}>Проблемот со Реакт</h1>
+        <ul class={s.ul}>
+          <li class={s.li}>Мемоизација useEffect, useMemo, useCallback</li>
+          <li class={s.li}>
+            Перформанс не е проблем, се додека не е огромен проблем
+          </li>
+          <li class={s.li}>Клучеви</li>
+          <li class={s.li}>Git gud менталитетот</li>
+        </ul>
+      </div>
+    );
+  },
+  () => {
+    return (
+      <div class={s.fs}>
+        <h1 class={s.h1}>Решението е солиднo со сигнали</h1>
+        <ul class={s.ul}>
+          <li class={s.li}>
+            Нема клучеви бидејќи копмонентите само еднаш се изведуваат
+          </li>
+          <li class={s.li}>
+            Нема мемоизација бидејќи сигналот чува референци до неговите
+            корисници
+          </li>
+          <li class={s.li}>
+            Перформанс оптимизацијата е чисто колкава е комплексноста на твоите
+            алгоритми
+          </li>
+          <li class={s.li}>Не се чува копија на ДОМот</li>
+        </ul>
+      </div>
+    );
+  },
+  () => {
+    return <img src="/react_perf.png" class={s.iframe} />;
+  },
+  () => {
+    return <img src="/solid_perf.png" class={s.iframe} />;
+  },
+  () => {
+    return <img src="/react_tree.png" class={s.iframe} />;
+  },
+  () => {
+    return (
+      <iframe
+        class={s.iframe}
+        src="https://codesandbox.io/p/sandbox/react-key-index-1-9olmn?file=%2Fsrc%2Findex.js%3A7%2C10-7%2C19"
+      />
+    );
+  },
+
+  () => {
+    return (
+      <iframe
+        class={s.iframe}
+        src="https://codesandbox.io/p/devbox/spring-water-d2kl21"
+      />
+    );
+  },
+  () => {
+    return (
+      <div class={s.fs}>
+        <h1 class={s.h1}>Проблемите на Солид</h1>
+        <ul class={s.ul}>
+          <li class={s.li}>Екосистемот</li>
+          <li class={s.li}>Алтернативите се огромни</li>
+          <li class={s.li}>Несигурност</li>
+          <li class={s.li}>Ти си крив за тоа дали апликацијата ќе биде брза</li>
+        </ul>
+      </div>
+    );
+  },
+  () => {
+    return <img src="/lol.png" class={s.iframe} />;
+  },
+  () => {
+    return (
+      <iframe
+        src="https://codesandbox.io/p/sandbox/vanilla-js-4vck7"
+        class="iframe"
+      />
+    );
+  },
+  () => {
+    return (
+      <div>
+        <h1 class={s.h1}>толку од мене</h1>
+        <h2 class={s.h2}>фала на времето</h2>
+      </div>
     );
   },
 ];
